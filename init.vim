@@ -1,22 +1,53 @@
+let mapleader = ','
 
 call plug#begin('~/.config/nvim/plugged')
 " Plugins will go here in the middle. "
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+Plug 'numkil/ag.nvim'
+
+Plug 'sheerun/vim-polyglot', { 'do': './build' }
+
+Plug 'Valloric/YouCompleteMe'
+
 call plug#end()
+
+let g:airline_powerline_fonts=1
+
+let g:ag_working_path_mode="r"
+
+set mouse=a
 
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab
+set expandtab
+set smarttab
 set number
 set relativenumber
-
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 map <C-n> :NERDTreeToggle<CR>
+
+set <F12>=<C-v><F12>
+nnoremap <F12> :YcmCompleter GoToDefinition<CR>
+
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fs :Ag<space>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fw :Windows<CR>
+nnoremap <leader>fm :Marks<CR>
+nnoremap <leader>ft :Filetypes<CR>
+
+nnoremap <leader>/ :vsp<CR>
+nnoremap <leader>- :sp<CR>
 
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
@@ -31,10 +62,8 @@ inoremap <C-j> <Esc><C-w>j
 inoremap <C-k> <Esc><C-w>k
 inoremap <C-l> <Esc><C-w>l
 
-"tnoremap <C-S-h> <C-\> :res+1
-"tnoremap <C-S-k> <C-\> :res-1
+noremap <C>s :w!<CR>
+noremap <C-S> :wa!<CR>
+
 noremap <A-k> :res-1<CR>
 noremap <A-j> :res+1<CR>
-"inoremap <C-S-h> <Esc> :res+1
-"inoremap <C-S-k> <Esc> :res-1
-
