@@ -24,6 +24,13 @@ let g:ag_working_path_mode="r"
 
 set mouse=a
 
+set cursorline
+hi CursorLine term=bold cterm=bold
+
+set nohlsearch
+
+" filetype indent off
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -31,6 +38,10 @@ set expandtab
 set smarttab
 set number
 set relativenumber
+set guicursor=
+
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -45,6 +56,8 @@ nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fw :Windows<CR>
 nnoremap <leader>fm :Marks<CR>
 nnoremap <leader>ft :Filetypes<CR>
+
+nnoremap <leader>cc :make<CR>
 
 nnoremap <leader>/ :vsp<CR>
 nnoremap <leader>- :sp<CR>
@@ -65,5 +78,10 @@ inoremap <C-l> <Esc><C-w>l
 noremap <C>s :w!<CR>
 noremap <C-S> :wa!<CR>
 
+"tnoremap <C-S-h> <C-\> :res+1
+"tnoremap <C-S-k> <C-\> :res-1
 noremap <A-k> :res-1<CR>
 noremap <A-j> :res+1<CR>
+"inoremap <C-S-h> <Esc> :res+1
+"inoremap <C-S-k> <Esc> :res-1
+
