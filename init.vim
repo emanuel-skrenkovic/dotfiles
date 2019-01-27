@@ -31,6 +31,8 @@ set nohlsearch
 
 " filetype indent off
 
+set completeopt-=preview
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
