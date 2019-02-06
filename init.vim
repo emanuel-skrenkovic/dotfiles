@@ -1,19 +1,14 @@
 let mapleader = ','
 
 call plug#begin('~/.config/nvim/plugged')
-" Plugins will go here in the middle. "
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 Plug 'numkil/ag.nvim'
-
 Plug 'sheerun/vim-polyglot', { 'do': './build' }
-
 Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
@@ -30,6 +25,9 @@ hi CursorLine term=bold cterm=bold
 set nohlsearch
 
 " filetype indent off
+
+set lcs=trail:·,tab:»·
+set list
 
 set completeopt-=preview
 
