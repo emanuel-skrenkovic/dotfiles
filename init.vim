@@ -2,6 +2,7 @@ let mapleader = ','
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -12,6 +13,20 @@ Plug 'sheerun/vim-polyglot', { 'do': './build' }
 Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
+
+" themes
+"
+set background=dark
+"set background=light
+let g:gruvbox_italic=1
+let g:gruvbox_invert_signs=0
+let g:gruvbox_improved_strings=0
+let g:gruvbox_improved_warnings=1
+let g:gruvbox_undercurl=1
+let g:gruvbox_contrast_dark="soft"
+colorscheme gruvbox
+
+" end themes
 
 let g:airline_powerline_fonts=1
 
