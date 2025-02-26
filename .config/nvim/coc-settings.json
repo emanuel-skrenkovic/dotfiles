@@ -1,0 +1,13 @@
+{
+  "rust-analyzer": {
+    "inlayHints": {
+      "typeHints": false,
+      "parameterHints": false,
+      "chainingHints": false,
+	  "closingBraceHints": false
+    },
+	"checkOnSave": false
+  }
+}
+
+
